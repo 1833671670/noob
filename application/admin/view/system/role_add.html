@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>添加</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link href="__ADMIN_PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/font-awesome.min.css?v=4.4.0"
+	rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/animate.min.css" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/style.min.css?v=4.1.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="commentForm" method="post"
+							action="{:url('system/role_ok')}">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">名称：</label>
+								<div class="input-group col-sm-7">
+									<input id="name" type="text" class="form-control" {notempty name="$info"}{if condition="$info['id'] eq 1"}disabled{/if}{/notempty} id="name" name="name" value='{notempty name="$info"}{$info['name']}{/notempty}'
+										required="" aria-required="true">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">描述：</label>
+								<div class="input-group col-sm-7">
+									<textarea class="form-control" name="desc">{notempty name="$info"}{$info['desc']}{/notempty}</textarea>
+								</div>
+							</div>
+							{notempty name="$info['id']"}
+							<input type="hidden" name="id" value="{$info['id']}" />
+							{/notempty}
+							<div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-12 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary btn_save"><i class="fa fa-save"></i> 保存</button>
+                        			<button type="button" class="btn btn-danger btn_close"><i class="fa fa-close"></i> 关闭</button>       
+                                </div>
+                            </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="__ADMIN_PUBLIC__/js/jquery.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/bootstrap.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/content.min.js?v=1.0.0"></script>
+	<script src="__ADMIN_PUBLIC__/js/jquery.form.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/contabs.js"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/plugins/validate/messages_zh.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/js/demo/form-validate-demo.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/plugins/layer/layer.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/common.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		
+        $('#commentForm').ajaxForm({
+            beforeSubmit: checkForm, 
+            success: complete, 
+            dataType: 'json'
+        });
+        
+        function checkForm(){
+            if( '' == $.trim($('#name').val())){
+                warn('请输入名称')
+                return false;
+            }
+            $('.btn_save').attr('disabled',true).addClass('disabled').text('提交中...');
+        }
+
+        function complete(res){
+            if(res.code == 1){
+                warn(res.msg,'success','closerefresh');
+            }else{
+                warn(res.msg,'error')
+                $('.btn_save').attr('disabled',false).removeClass('disabled').text('保存');
+            }
+        }
+     
+    });
+	</script>
+</body>
+</html>

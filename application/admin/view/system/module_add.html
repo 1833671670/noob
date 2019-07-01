@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>添加</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link href="__ADMIN_PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/font-awesome.min.css?v=4.4.0"
+	rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/animate.min.css" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/style.min.css?v=4.1.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="commentForm" method="post"
+							action="{:url('system/module_ok')}">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">名称：</label>
+								<div class="input-group col-sm-7">
+									<input id="name" type="text" class="form-control" id="name" name="name" value='{notempty name="$info['name']"}{$info['name']}{/notempty}'
+										required="" aria-required="true">
+										 <!-- <span class="help-block m-b-none">说明文字</span>  -->
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">上级栏目：</label>
+								<div class="input-group col-sm-7">
+									<select class="form-control" name="pid" required="" aria-required="true">
+								        <option value="0">顶级分类</option>
+										{volist name="tree" id="vo"}
+										<option {present name='$info'}{if condition="$vo['id'] eq $info['pid']"}selected{/if}{/present} value="{$vo.id}">{:str_repeat('　',$vo.level)}{$vo.name}</option>
+										{/volist}
+								    </select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">图标：</label>
+								<div class="input-group col-sm-7">
+									<input class="form-control" name="icon" value='{notempty name="$info['icon']"}{$info['icon']}{/notempty}' >
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">类型：</label>
+								<div class="input-group col-sm-7">
+									<select class="form-control" name="target" >
+								        <option {present name='$info'}{if condition="$info['target'] eq 1"}selected{/if}{/present} value="1">导航</option>
+								        <option {present name='$info'}{if condition="$info['target'] eq 2"}selected{/if}{/present} value="2">菜单</option>
+								        <option {present name='$info'}{if condition="$info['target'] eq 3"}selected{/if}{/present} value="3">方法</option>
+								    </select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">地址：</label>
+								<div class="input-group col-sm-7">
+									<input class="form-control" name="url" value='{notempty name="$info['url']"}{$info['url']}{/notempty}' >
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">排序：</label>
+								<div class="input-group col-sm-7">
+									<input class="form-control" name="sortnum" value='{notempty name="$info['sortnum']"}{$info['sortnum']}{/notempty}' >
+								</div>
+							</div>
+							
+							<input type="hidden" name="id" value="{present name="$info['id']"}{$info['id']}{/present}" />
+							
+							<div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-12 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary btn_save"><i class="fa fa-save"></i> 保存</button>
+                        			<button type="button" class="btn btn-danger btn_close"><i class="fa fa-close"></i> 关闭</button>       
+                                </div>
+                            </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="__ADMIN_PUBLIC__/js/jquery.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/bootstrap.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/content.min.js?v=1.0.0"></script>
+	<script src="__ADMIN_PUBLIC__/js/jquery.form.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/contabs.js"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/plugins/validate/messages_zh.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/js/demo/form-validate-demo.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/plugins/layer/layer.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/common.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		
+        $('#commentForm').ajaxForm({
+            beforeSubmit: checkForm, 
+            success: complete, 
+            dataType: 'json'
+        });
+        
+        function checkForm(){
+            if( '' == $.trim($('#name').val())){
+                warn('请输入名称')
+                return false;
+            }
+            $('.btn_save').attr('disabled',true).addClass('disabled').text('提交中...');
+        }
+
+        function complete(res){
+        	//本窗口的父级iframe
+        	//var m = parent.document.getElementById("m").value;
+        	//parent.document.getElementById("iframe"+m).contentWindow.location.href = 'http://www.baidu.com';
+        	//return;
+        	//window.location.href='/admin/system/module';
+        	//document.getElementById('iframe9').contentWindow.location.reload(true);
+        	//document.getElementById('iframe9').src='http://www.baidu.com';
+        	//document.frames('iframe9').location.reload()
+        	//$("#iframe9").window.location.reload();
+        	//writeObj($("#iframe9").window)
+        	//writeObj(document.getElementById('iframe9').window)
+        	//layer.close(index);
+        	//parent.location.reload(true);
+        	//parent.location.href = '/admin/system/module';
+            if(res.code == 1){
+            	/*
+                layer.msg(data.msg, {icon: 6,time:1500,shade: 0.1}, function(index){
+                    layer.close(index);
+                    window.location.href="/admin/article/index.html";
+                });
+            	
+				 layer.msg(res.msg, {icon: 6,time:1500,shade: 0.1}, function(index){
+					 layer_close(index);
+	                    window.location.href="/admin/system/module.html";
+	                    window.location.href="http://www.baidu.com";
+	                });*/
+                warn(res.msg,'success','closerefresh');
+            }else{
+                warn(res.msg,'error')
+                $('.btn_save').attr('disabled',false).removeClass('disabled').text('保存');
+            }
+        }
+     
+    });
+	</script>
+</body>
+</html>

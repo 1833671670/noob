@@ -1,0 +1,184 @@
+---------------------------------------------------------------
+[ 2019-03-21T09:26:03+08:00 ] 127.0.0.1 HEAD tp5.1/index.php/api/test
+[运行时间：0.112200s] [吞吐率：8.91req/s] [内存消耗：1,455.86kb] [文件加载：67]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:26:12+08:00 ] 127.0.0.1 GET tp5.1/index.php/api/test
+[运行时间：0.049202s] [吞吐率：20.32req/s] [内存消耗：1,457.23kb] [文件加载：67]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:26:59+08:00 ] 127.0.0.1 HEAD tp5.1/index.php/api/mypay/test
+[运行时间：0.050202s] [吞吐率：19.92req/s] [内存消耗：1,455.87kb] [文件加载：67]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:27:05+08:00 ] 127.0.0.1 GET tp5.1/index.php/api/mypay/test
+[运行时间：0.039602s] [吞吐率：25.25req/s] [内存消耗：1,457.23kb] [文件加载：67]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:27:12+08:00 ] 127.0.0.1 GET tp5.1/api/mypay/test
+[运行时间：0.047201s] [吞吐率：21.19req/s] [内存消耗：1,457.72kb] [文件加载：67]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+  '/api/mypay/test' => '',
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:27:15+08:00 ] 127.0.0.1 HEAD tp5.1/api/mypay/test
+[运行时间：0.049201s] [吞吐率：20.32req/s] [内存消耗：1,456.42kb] [文件加载：67]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+  '/api/mypay/test' => '',
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:27:18+08:00 ] 127.0.0.1 GET tp5.1/api/mypay/test
+[运行时间：0.042200s] [吞吐率：23.70req/s] [内存消耗：1,457.72kb] [文件加载：67]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+  '/api/mypay/test' => '',
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:27:28+08:00 ] 127.0.0.1 GET tp5.1/index.php/mypay/test
+[运行时间：0.082203s] [吞吐率：12.17req/s] [内存消耗：1,458.05kb] [文件加载：66]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected 'public' (T_PUBLIC), expecting ',' or ';'[E:\sjx\PHPTutorial\WWW\tp5.1demo\application\api\controller\Mypay.php:15]
+---------------------------------------------------------------
+[ 2019-03-21T09:27:41+08:00 ] 127.0.0.1 HEAD tp5.1/index.php/mypay/test
+[运行时间：0.196210s] [吞吐率：5.10req/s] [内存消耗：1,459.14kb] [文件加载：66]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:27:45+08:00 ] 127.0.0.1 GET tp5.1/index.php/mypay/test
+[运行时间：0.047201s] [吞吐率：21.19req/s] [内存消耗：1,460.50kb] [文件加载：66]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2019-03-21T09:31:38+08:00 ] 127.0.0.1 GET tp5.1/index.php/mypay/test
+[运行时间：0.040601s] [吞吐率：24.63req/s] [内存消耗：1,460.74kb] [文件加载：66]
+[ info ] [ LANG ] E:\sjx\PHPTutorial\WWW\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.1',
+)
+[ info ] [ PARAM ] array (
+)

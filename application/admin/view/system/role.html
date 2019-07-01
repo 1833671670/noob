@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="__ADMIN_PUBLIC__/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+	<!-- Data Tables -->
+	<link href="__ADMIN_PUBLIC__/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/base.css" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/animate.min.css" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/style.min.css?v=4.0.0" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__ADMIN_PUBLIC__/css/base.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>角色列表</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div  class="col-sm-9 m-b-xs">
+            	{notempty name="$priv"}
+            	{volist name="priv" id="vo"}
+                <a onclick="{$vo.event}">
+                	<button class="btn {$vo.img}" type="button">
+                	<i class="fa {$vo.icon}"></i>
+                	{$vo.name}
+                	</button>
+                </a>
+                {/volist} 
+                {else/}
+                <span class="simple_tag">没有可操作选项</span>
+                {/notempty}
+                </div>                                            
+            </div>
+            <div class="hr-line-dashed"></div>
+            <!--搜索框结束-->
+            <div class="example-wrap">
+                <div class="example">
+                    <table id="cusTable" class="table table-bordered tablelist table-hover">
+                        <thead>
+							<th>
+                                <input type="checkbox" class="i-checks top_check" name="top_check">
+							</th>
+							<th>ID</th>
+							<th>名称</th>
+							<th>描述</th>
+							<th>时间</th>
+                        </thead>
+                         <tbody>
+                         	{volist name="$info" id="vo"}
+                         	<tr rel="{$vo.id}">
+                         		<td>
+	                                 <input type="checkbox" class="i-checks" {if condition="$vo.id eq 1"}disabled{else/}name="check"{/if} value="{$vo.id}">
+								 </td>
+                                 <td>{$vo.id}</td>
+                                 <td>{$vo.name}</td>
+                                 <td>{$vo.desc}</td>
+                                 <td>{if condition="$vo.addtime gt 0"}{$vo.addtime|date="Y-m-d H:i"}{/if}</td>
+                             </tr>
+                             {/volist}
+                         </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- End Example Pagination -->
+        </div>
+    </div>
+</div>
+<!-- End Panel Other -->
+</div>
+
+	<script src="__ADMIN_PUBLIC__/js/jquery.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="__ADMIN_PUBLIC__/js/content.min.js?v=1.0.0"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/layer/layer.js"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/iCheck/icheck.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/common.js"></script>
+<script>
+
+$(document).ready(function(){
+	$(".i-checks").iCheck({
+		checkboxClass:"icheckbox_square-green",
+		radioClass:"iradio_square-green",
+		})
+});
+
+//全选  
+$('.top_check').on('ifChecked', function(event){  
+    $('input').iCheck('check');  
+});  
+//反选  
+$('.top_check').on('ifUnchecked', function(event){  
+    $('input').iCheck('uncheck');  
+});  
+
+function add(){
+	layer_show("添加","{:url('system/role_add')}",800,350);
+}
+
+function edit(){
+	var id = getid();
+	if(id>0){
+		layer_show("编辑","{:url('system/role_add')}?id="+id,800,350);
+	}else{
+		layer_alert('请选择目标');	
+	}
+}
+
+function del(){
+	var ids = getids();
+	if(ids != ''){
+		parent.layer.confirm('确认要删除吗？',{icon: 3, title:'警告'},function(index){
+			$.getJSON("{:url('system/role_del')}",{'ids':ids},function(res){
+				if(res.code == 1){
+					warn(res.msg,'success','selfrefresh');
+				}else{
+					warn(res.msg,'error');
+				}
+			  });
+		});
+	}else{
+		layer_alert('请选择目标');	
+	}
+}
+
+
+//模块权限
+function module_prev(){
+	
+	var id = getid();
+	if(id>0){
+		/*
+		if(id == 1){
+			layer_alert('超级管理员具有所有权限');
+			return;
+		}
+		*/
+		layer_show("编辑模块权限","{:url('system/module_prev')}?id="+id,600,600);
+	}else{
+		layer_alert('请选择目标');	
+	}
+}
+
+//按钮权限
+function button_prev(){
+	
+	var id = getid();
+	if(id>0){
+		/*
+		if(id == 1){
+			layer_alert('超级管理员具有所有权限');
+			return;
+		}
+		*/
+		layer_show("编辑按钮权限","{:url('system/button_prev')}?id="+id,700,600);
+	}else{
+		layer_alert('请选择目标');	
+	}
+}
+
+</script>
+</body>
+</html>

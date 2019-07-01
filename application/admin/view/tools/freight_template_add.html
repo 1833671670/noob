@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>添加</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link href="__ADMIN_PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/animate.min.css" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/style.min.css?v=4.1.0" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/plugins/layui/css/layui.css" rel="stylesheet">
+<link href="__ADMIN_PUBLIC__/css/base.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t layui-form" id="commentForm" method="post"
+							action="{:url('tools/freight_template_ok')}">
+							<div class="form-group">
+								<label class="col-sm-2 control-label"><em>*</em>模板名称：</label>
+								<div class="input-group col-sm-8">
+									<input type="text" class="form-control" maxlength="16"  name="template_name" id="template_name" value="{notempty name="$info"}{$info['template_name']}{/notempty}" required="" aria-required="true" >
+								</div>
+							</div>
+							
+							<div class="form-group layui-form-item">
+								<label class="col-sm-2 control-label">地区设置：</label>
+								<div class="input-group col-sm-8">
+                                    <div class="layui-input-block">
+								        <input type="radio" name="price_type" lay-filter="price_type" value="0" title="统一设置" {notempty name="$info"}{if condition="$info['price_type'] eq 0"}checked{/if}{else/}checked{/notempty} >
+								        <input type="radio" name="price_type" lay-filter="price_type" value="1" title="地区设置" {notempty name="$info"}{if condition="$info['price_type'] eq 1"}checked{/if}{/notempty}>
+								    </div>
+                                </div>
+							</div>
+							
+							<div class="form-group layui-form-item">
+								<label class="col-sm-2 control-label">计费方式：</label>
+								<div class="input-group col-sm-8 jffs">
+                                    <div class="layui-input-block">
+								        <input type="radio" name="type" id='type' lay-filter="type" value="0" title="重量计费" {notempty name="$info"}{if condition="$info['type'] eq 0"}checked{/if}{else/}checked{/notempty} >
+								        <input type="radio" name="type" id='type' lay-filter="type" value="1" title="件数计费" {notempty name="$info"}{if condition="$info['type'] eq 1"}checked{/if}{/notempty}>
+								    </div>
+                                </div>
+							</div>
+<style>
+.table tr .area{width:200px;}
+.table tr td{width:100px;}							
+</style>
+							
+							<div class="form-group">
+								<label class="col-sm-2 control-label">模板设置：</label>
+								<div class="input-group col-sm-9">
+			                        <table class="table table-bordered">
+			                            <thead>
+			                            	{present name="$info"}
+				                            	{if condition="$info.type eq 0"}
+				                                <tr class='tr_box'>
+				                                    <th>区域</th>
+				                                    <th>首重（g）</th>
+				                                    <th>运费（￥）</th>
+				                                    <th>续重（g）</th>
+				                                    <th>运费（￥）</th>
+				                                    {if condition="$info.price_type eq 1"}
+				                                    <th>操作</th>
+				                                    {/if}
+				                                </tr>
+				                                {else/}
+				                                <tr class='tr_box'>
+				                                    <th>区域</th>
+				                                    <th>首件数（件）</th>
+				                                    <th>运费（￥）</th>
+				                                    <th>续件数（件）</th>
+				                                    <th>运费（￥）</th>
+				                                    {if condition="$info.price_type eq 1"}
+				                                    <th>操作</th>
+				                                    {/if}
+				                                </tr>
+				                                {/if}
+			                                {else/}
+			                                <tr class='tr_box'>
+			                                    <th>区域</th>
+			                                    <th>首重（g）</th>
+			                                    <th>运费（￥）</th>
+			                                    <th>续重（g）</th>
+			                                    <th>运费（￥）</th>
+			                                </tr>
+			                                {/present}
+			                            </thead>
+			                            <tbody class='template_div'>
+			                            	{present name="$info"}
+				                            	{if condition="$info.price_type eq 0"}
+				                                <tr class='nosel tysz'>
+				                                    <td class='area'>统一设置<input type='hidden' name='area_ids[]' class='area_ids' /><input type='hidden' name='config_id[]' value="{$info['config'][0]['config_id']}" /></td>
+				                                    <td><input type="text" name="first_unit[]" class="form-control text-center" value="{$info['config'][0]['first_unit']}" /></td>
+				                                    <td><input type="text" name="first_money[]" class="form-control text-center" value="{$info['config'][0]['first_money']}" /></td>
+				                                    <td><input type="text" name="continue_unit[]" class="form-control text-center" value="{$info['config'][0]['continue_unit']}" /></td>
+				                                    <td><input type="text" name="continue_money[]" class="form-control text-center" value="{$info['config'][0]['continue_money']}" /></td>
+				                                </tr>
+				                                {else/}
+				                                	<tr class='nosel tysz'></tr>
+					                                {volist name="$info.config" id="vo"}
+					                                <tr class='nosel qysz'>
+				                                    	<td class='area'>{$vo.name}<input type='hidden' name='area_ids[]' value='{$vo.area_ids}' class='area_ids' /><input type='hidden' name='config_id[]' value="{$vo.config_id}" /></td>
+					                                    <td><input type="text" name="first_unit[]" class="form-control text-center" value='{$vo.first_unit}' /></td>
+					                                    <td><input type="text" name="first_money[]" class="form-control text-center" value='{$vo.first_money}' /></td>
+					                                    <td><input type="text" name="continue_unit[]" class="form-control text-center" value='{$vo.continue_unit}' /></td>
+					                                    <td><input type="text" name="continue_money[]" class="form-control text-center" value='{$vo.continue_money}' /></td>
+					                                    <td><button type="button" class="del_temp btn btn-outline btn-danger"><i class="fa fa-trash-o"></i>删除</button></td>
+				                                    </tr>
+			                                    	{/volist}
+				                                {/if}
+			                                {else/}
+				                                <tr class='nosel tysz'>
+				                                    <td class='area'>统一设置<input type='hidden' name='area_ids[]' class='area_ids' /><input type='hidden' name='config_id[]' /></td>
+				                                    <td><input type="text" name="first_unit[]" class="form-control text-center" value='0' /></td>
+				                                    <td><input type="text" name="first_money[]" class="form-control text-center" value='0' /></td>
+				                                    <td><input type="text" name="continue_unit[]" class="form-control text-center" value='0' /></td>
+				                                    <td><input type="text" name="continue_money[]" class="form-control text-center" value='0' /></td>
+				                                </tr>
+			                                {/present}
+			                            </tbody>
+			                            <tfoot class='add_template' {present name="$info"}{if condition="$info['price_type'] eq 1"}style='display:table-footer-group'{/if}{/present} >
+			                            	<tr class="bg-gray">
+			                            		<td colspan='6' class="text-l">
+			                            			<a class='save_area btn btn-success btn-rounded'>+设置</a>
+			                            		</td>
+			                            	</tr>
+			                            </tfoot>
+			                        </table>
+                                </div>
+							</div>
+							
+							
+							<input type="hidden" name="template_id" value="{present name='$info'}{notempty name="$info"}{$info['template_id']}{/notempty}{/present}" />
+							<!-- <input type="hidden" name="config_list" class='config_list' /> -->
+							
+							<div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-12 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary btn_save"><i class="fa fa-save"></i> 保存</button>
+                        			<button type="button" class="btn btn-danger btn_close"><i class="fa fa-close"></i> 关闭</button>       
+                                </div>
+                            </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="__ADMIN_PUBLIC__/js/jquery.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/bootstrap.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/content.min.js?v=1.0.0"></script>
+	<script src="__ADMIN_PUBLIC__/js/jquery.form.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/contabs.js"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/plugins/validate/messages_zh.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/js/demo/form-validate-demo.min.js"></script>
+    <script src="__ADMIN_PUBLIC__/plugins/layer/layer.js"></script>
+    <script src="__ADMIN_PUBLIC__/plugins/layui/layui.js"></script>
+    <script src="__ADMIN_PUBLIC__/js/common.js"></script>
+	<script type="text/javascript">
+	 
+	layui.use('form', function(){
+	    var form = layui.form;
+	    form.on('radio(price_type)', function(data){
+		    var val = data.value;
+		    
+		    //var type = $("#type").val();
+		    
+		    if(val == 0){
+		    	$(".tr_box").html('<th>区域</th><th>首重（g）</th><th>运费（￥）</th><th>续重（g）</th><th>运费（￥）</th>');
+		    	$(".add_template").hide(); 
+		    	if($('.tysz').html() == ''){
+		    		//统一设置
+			    	var html = "<td class='area'>统一设置<input type='hidden' name='area_ids[]' class='area_ids' /></td>";
+	                html += '<td><input type="text" name="first_unit[]" class="form-control text-center" value="0" /></td>';
+	                html += '<td><input type="text" name="first_money[]" class="form-control text-center" value="0" /></td>';
+	                html += '<td><input type="text" name="continue_unit[]" class="form-control text-center" value="0" /></td>';
+	                html += '<td><input type="text" name="continue_money[]" class="form-control text-center" value="0" /></td>';
+			    	$(".tysz").append(html);
+		    	}
+		    	
+		    	//同时将当前多个删除的地址（隐藏）展示出来
+		    	$(".qysz").each(function(index,el) { 
+		    		var ids = $(el).find('.area_ids').val();
+		    		var arr = ids.split(",");
+		    		for(var i=0;i<arr.length;i++){
+		    			if(arr[i]){
+		    				$('.area'+arr[i]).parent().show();
+		    				$('.area'+arr[i]).next('div').removeClass('layui-form-checked');
+		    			}
+		    		}
+		    		$(el).remove();
+		    	});
+		    	//layui.form.render('checkbox');
+		    	//$(".qysz").remove();
+		    	
+		    }else{
+		    	 $(".tr_box").html('<th>区域</th><th>首重（g）</th><th>运费（￥）</th><th>续重（g）</th><th>运费（￥）</th><th>操作</th>');
+		    	 $(".add_template").show(); 
+		    	 $('.tysz').html('');
+		    	//地区设置
+		    }
+		    
+		    var type = $(".jffs").find('.layui-form-radioed').prev('input').val();
+		    if(type == 0){	//重量
+		    	$(".tr_box").find('th').eq(1).html('首重（g）');
+		    	$(".tr_box").find('th').eq(3).html('续重（g）');
+		    }else{	//件数
+		    	$(".tr_box").find('th').eq(1).html('首件数（件）');
+		    	$(".tr_box").find('th').eq(3).html('续件数（件）');
+		    }
+		});
+		
+	    form.on('radio(type)', function(data){
+		    var val = data.value;
+		    //alert(val)
+		    if(val == 0){
+		    	//重量
+		    	$(".tr_box").find('th').eq(1).html('首重（g）');
+		    	$(".tr_box").find('th').eq(3).html('续重（g）');
+		    }else{
+		    	//件数
+		    	$(".tr_box").find('th').eq(1).html('首件数（件）');
+		    	$(".tr_box").find('th').eq(3).html('续件数（件）');
+		    }
+		});
+	    
+		
+	    $(".area_save").click(function(){
+	    	//获取选中的区域值
+	    	var ids = '';
+	    	var names = '';
+	    	
+	    	$("input:checkbox[name='pro_id']:checked").each(function(index,el) {
+	    		//若其父级已被隐藏，则说明选过
+	    		if($(this).parent().css('display') != 'none'){
+	    			ids += $(this).val()+',';
+		    	    names += $(this).attr('title')+',';
+		    	    $(this).parent().hide();
+		    	    //同时隐藏选中的标签
+		    	    $('.area'+$(this).val()).next('div').removeClass('layui-form-checked');
+		    	    $('.area'+$(this).val()).removeAttr('checked');
+	    		}
+	    	});
+	    	form.render('checkbox') 	//隐藏选中的项
+	    	if(names != ''){
+		    	var str = "<tr class='nosel qysz'><td class='area'>"+names+"<input type='hidden' value="+ids+" name='area_ids[]' class='area_ids' /></td>";
+		    	str += '<td><input type="text" name="first_unit[]" class="form-control text-center" value="0" /></td>';
+		    	str += '<td><input type="text" name="first_money[]" class="form-control text-center" value="0" /></td>';
+		    	str += '<td><input type="text" name="continue_unit[]" class="form-control text-center" value="0" /></td>';
+		    	str += '<td><input type="text" name="continue_money[]" class="form-control text-center" value="0" /></td>';
+		    	str += '<td><button type="button" class="del_temp btn btn-outline btn-danger"><i class="fa fa-trash-o"></i>删除</button></td></tr>';
+		    	$(".template_div").append(str);
+	    	}
+	    	layer_close();
+	    })
+	});
+	
+	$('body').on('click','.del_temp',function(){
+		var ids = $(this).closest('tr').find('.area_ids').val();
+		var arr = ids.split(",");
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]){
+				$('.area'+arr[i]).parent().show();
+			}
+		}
+		//显示已经隐藏的区域
+		layui.form.render('checkbox');
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]){
+				$('.area'+arr[i]).next('div').removeClass('layui-form-checked');
+				$('.area'+arr[i]).removeAttr('checked');	//默认选中的check取消
+			}
+		}
+		$(this).closest('tr').remove();
+	})
+	
+	
+	$(".save_area").click(function(){
+		index = layer.open({
+			title: '选择区域',
+   		    type: 1,
+   		 	scrollbar: false,
+   		    content: $('.area_div'), //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+   		    area: ['800px', '430px']
+    	});	
+	})
+	
+
+	//运费配置单个对象
+    function ConfigItem(config_id, area_ids, first_unit, first_money, continue_unit, continue_money) {
+        this.config_id = config_id;
+        this.area_ids = area_ids;
+        this.first_unit = first_unit;
+        this.first_money = first_money;
+        this.continue_unit = continue_unit;
+        this.continue_money = continue_money;
+        //this.is_default = is_default;
+    }
+	
+	$(function(){
+        $('#commentForm').ajaxForm({
+            beforeSubmit: checkForm, 
+            //beforeSerialize: modifySubmitData,
+            success: complete, 
+            dataType: 'json'
+        });
+        
+        /*
+        function modifySubmitData(){
+        	var config_list = new Array();
+            var template_id = $("input[name='template_id']").val();
+            var template_name = $("input[name='template_name']").val();
+            var type = $("input[name='type']:checked").val();
+            var is_enable_default = $("input[name='price_type']:checked").val();
+            var config_item = $(".template_div").find('tr');
+            config_item.each(function(i,o){
+            	if($(this).html()){
+            		var area_ids_input = $(this).find("input[name^='area_ids']");
+                    var first_unit_val = $(this).find("input[name^='first_unit']").val();
+                    //var config_id_val = $(this).find("input[name^='config_id']").val();
+                    var first_money_val = $(this).find("input[name^='first_money']").val();
+                    var continue_unit_val = $(this).find("input[name^='continue_unit']").val();
+                    var continue_money_val = $(this).find("input[name^='continue_money']").val();
+                    //var is_default_val = $(this).find("input[name^='is_default']").val();
+                    if (area_ids_input.val().length > 0 || config_item.length > 0) {
+                        //var configItem = new ConfigItem(config_id_val, area_ids_input.val(), first_unit_val, first_money_val, continue_unit_val, continue_money_val, is_default_val);
+                        var configItem = new ConfigItem(area_ids_input.val(), first_unit_val, first_money_val, continue_unit_val, continue_money_val);
+                        config_list.push(configItem);
+                    }
+            	}
+            })
+        }
+        */
+        
+        function checkForm(){
+            if( '' == $.trim($('#template_name').val())){
+                warn('请输入名称')
+                return false;
+            }
+            //$('.btn_save').attr('disabled',true).addClass('disabled').text('提交中...');
+        }
+
+        function complete(res){
+            if(res.code == 1){
+                warn(res.msg,'success','fullcloserefresh');
+            }else{
+                warn(res.msg,'error')
+                $('.btn_save').attr('disabled',false).removeClass('disabled').text('保存');
+            }
+        }
+    });
+
+</script>
+</body>
+
+<div class="wrapper wrapper-content animated fadeInRight area_div">
+	<div class="row">
+			<div class="col-sm-10 col-md-offset-1">
+				<div class="float-e-margins">
+						<div class="layui-form" style='overflow:hidden'>
+							{volist name="$area" id="vo"}
+							<div class="area_box" {php}if(isset($area_ids) && strpos($area_ids,strval($key))!==false){ echo 'style="display:none"'; }{/php} >
+								<input type="checkbox" class='area{$key}' name="pro_id" title="{$vo}" value="{$key}" lay-filter="area" lay-skin="primary">
+							</div>
+							{/volist} 
+						</div>
+					    <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                             <div class="col-sm-10 col-sm-offset-3">
+								<button type="submit" class="btn btn-primary area_save"><i class="fa fa-save"></i> 保存</button>
+                       			<button type="button" class="btn btn-danger area_close"><i class="fa fa-close"></i> 关闭</button>       
+                             </div>
+                        </div>
+				</div>
+			</div>
+	</div>
+</div>
+
+<script>
+$(".area_close").click(function(){
+	layer_close();
+})
+</script>
+
+</html>

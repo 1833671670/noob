@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运费模板</title>
+    <link href="__ADMIN_PUBLIC__/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+	<!-- Data Tables -->
+	<link href="__ADMIN_PUBLIC__/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/base.css" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/animate.min.css" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/style.min.css?v=4.0.0" rel="stylesheet">
+	<link href="__ADMIN_PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__ADMIN_PUBLIC__/css/base.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>运费模板</h5>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div  class="col-sm-5 m-b-xs">
+                {notempty name="$priv"}
+            	{volist name="priv" id="vo"}
+            	{if condition="$vo.event eq 'add()'"}
+                <a onclick="{$vo.event}">
+                	<button class="btn {$vo.img}" type="button">
+                	<i class="fa {$vo.icon}"></i>
+                	{$vo.name}
+                	</button>
+                </a>
+                {/if}
+                {/volist} 
+                {else/}
+                <span class="simple_tag">没有可操作选项</span>
+                {/notempty}
+                </div>   
+            </div>
+            <div class="hr-line-dashed"></div>
+            <!--搜索框结束-->
+            <div class="example-wrap">
+                {volist name="$info" id="vo"}
+                <div class="example">
+                    <div class="ibox-title" style='border:none'>
+                        <h5 style='margin:0;font-size:18px;'>
+                        {$vo.template_name}
+                        <span style='font-weight:normal;font-size:12px;color:#777;'>{if condition="$vo.type eq 0"}重量{else/}件数{/if}</span>
+                        </h5>
+                        <div class="ibox-tools">
+                        	<input type='hidden' value='{$vo.template_id}' />
+                        	{notempty name="$priv"}
+			            	{volist name="priv" id="vv"}
+			            	{if condition="$vv.event neq 'add()'"}
+			            	{php}$e=str_replace('()','('.$vo['template_id'].')',$vv['event']);{/php}
+			                <a onclick="{$e}" >
+			                	<button type="button" class="btn btn-outline btn-xs {$vv.img}">{$vv.name}</button>
+			                </a>
+			                {/if}
+			                {/volist} 
+			                {else/}
+			                <span class="simple_tag">没有可操作选项</span>
+			                {/notempty}
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                        	{if condition="$vo.type eq 0"}
+                            <tr>
+                                <th>区域</th>
+                                <th>首重（g）</th>
+                                <th>运费（￥）</th>
+                                <th>续重（g）</th>
+                                <th>运费（￥）</th>
+                            </tr>
+                            {else/}
+                            <tr>
+                                <th>区域</th>
+                                <th>首件数（件）</th>
+                                <th>运费（￥）</th>
+                                <th>续件数（件）</th>
+                                <th>运费（￥）</th>
+                            </tr>
+                            {/if}
+                        </thead>
+                        <tbody>
+                        	{volist name="$vo.config" id="vs"}
+                            <tr>
+                                <td>{$vs.name|default='统一设置'}</td>
+                                <td>{$vs.first_unit}</td>
+                                <td>{$vs.first_money}</td>
+                                <td>{$vs.continue_unit}</td>
+                                <td>{$vs.continue_money}</td>
+                            </tr>
+                            {/volist}
+                        </tbody>
+                    </table>
+                </div>
+            	{/volist}
+        </div>
+    </div>
+</div>
+<!-- End Panel Other -->
+</div>
+	<script src="__ADMIN_PUBLIC__/js/jquery.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="__ADMIN_PUBLIC__/js/content.min.js?v=1.0.0"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/layer/layer.js"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/laydate/laydate.js"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/iCheck/icheck.min.js"></script>
+	<script src="__ADMIN_PUBLIC__/plugins/fancybox/jquery.fancybox.js"></script>
+	<script src="__ADMIN_PUBLIC__/js/common.js"></script>
+<script>
+
+function add(){
+	var index = layer.open({
+		type: 2,
+		title: '添加模板',
+		content: "{:url('tools/freight_template_add')}"
+	});
+	layer.full(index);
+}
+
+function edit(id){
+	if(id>0){
+		var index = layer.open({
+			type: 2,
+			title: '编辑模板',
+			content: '{:url("tools/freight_template_add")}?id='+id
+		});
+		layer.full(index);
+	}else{
+		layer_alert('请选择目标');	
+	}
+}
+
+function del(id){
+	if(id != ''){
+		parent.layer.confirm('确认要删除吗？',{icon: 3, title:'警告'},function(index){
+			$.ajax({
+				type: 'post',
+                url: "{:url('tools/freight_template_del')}",
+                data: {id: id},
+                dataType: 'json',
+                success: function (res) {
+                	if(res.code == 1){
+    					warn(res.msg,'success','selfrefresh');
+    				}else if(res.code == -1){
+    					//再次警告
+    					parent.layer.confirm(res.msg, {icon: 3, title:'警告'}, function () {
+    						$.ajax({
+                                type: 'post',
+                                url: "{:url('tools/freight_template_del')}",
+                                data: {id: id, flag: 'confirm'},
+                                dataType: 'json',
+                                success: function (res1) {
+                                    if (res1.code == 1) {
+                                    	warn(res1.msg,'success','selfrefresh');
+                                    } else {
+                                    	warn(res1.msg,'error');
+                                    }
+                                }
+                            }) 
+                        });
+    				}else{
+    					warn(res.msg,'error');
+    				}
+                }
+			})
+		});
+	}else{
+		layer_alert('请选择目标');	
+	}
+}
+
+</script>
+</body>
+</html>
