@@ -3,6 +3,7 @@ namespace app\admin\controller;
 use think\Db;
 use think\Config;
 use think\Validate;
+use think\captcha\Captcha;
 use app\admin\model\Admin;
 use app\admin\model\AdminRole;
 use py\Random;

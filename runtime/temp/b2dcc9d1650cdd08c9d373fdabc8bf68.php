@@ -1,3 +1,4 @@
+<?php /*a:1:{s:60:"E:\PHPTutorial\WWW\k\application\index\view\index\index.html";i:1561989627;}*/ ?>
 <html>
     <title>你的专属空间</title>
     <style>
@@ -18,26 +19,26 @@
         <div style="text-align: center;">
             <span style="font-size:32px;">留言板</span>
         </div>
-        {volist name="info" id="vo"}
+        <?php if(is_array($info) || $info instanceof \think\Collection || $info instanceof \think\Paginator): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
         <div style="margin-top:10px;border:1px solid #ccc;">
             <div>
-                <span style="color: burlywood">留言人姓名：{$vo.member}</span>
+                <span style="color: burlywood">留言人姓名：<?php echo htmlentities($vo['member']); ?></span>
             </div>
             <div style="color: cornflowerblue">
-               内容：{$vo.content}
+               内容：<?php echo htmlentities($vo['content']); ?>
             </div>
-            <div>留言时间：{$vo.addtime|date='Y-m-d H:i:s'}</div>
+            <div>留言时间：<?php echo htmlentities(date('Y-m-d H:i:s',!is_numeric($vo['addtime'])? strtotime($vo['addtime']) : $vo['addtime'])); ?></div>
         </div>
-        {/volist}
-        {$info|raw}
+        <?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php echo $info; ?>
         <div style="text-align: center;margin-top: 20px;">
             <textarea name="message" id="message" style="overflow:hidden;resize: none;width: 100%;height: 60px;margin-bottom: 20px;"></textarea>
             <span id="btn" style="border:1px solid #ccc;font-size: 20px;background-color: lightgoldenrodyellow;">提交</span>
         </div>
     </body>
-    <script src="__ADMIN_PUBLIC__/js/jquery.min.js"></script>
-    <script src="__ADMIN_PUBLIC__/plugins/layer/layer.js"></script>
-	<script src="__ADMIN_PUBLIC__/plugins/laydate/laydate.js"></script>
+    <script src="/static/admin/js/jquery.min.js"></script>
+    <script src="/static/admin/plugins/layer/layer.js"></script>
+	<script src="/static/admin/plugins/laydate/laydate.js"></script>
     <script>
         $('#btn').click(function(){
             var oli = document.getElementsByTagName("li");
@@ -52,7 +53,7 @@
             }
             $.ajax({
                 type:"POST",
-                url:"{:url('index/message')}",
+                url:"<?php echo url('index/message'); ?>",
                 data:{message:message},
                 success:function(res){
                    if(res.code == 1){
