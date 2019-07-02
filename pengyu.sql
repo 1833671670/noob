@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-07-02 13:41:12
+Date: 2019-07-02 17:47:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -45,12 +45,12 @@ CREATE TABLE `tp_admin` (
   PRIMARY KEY (`admin_id`),
   KEY `user_name` (`admin_name`) USING BTREE,
   KEY `agency_id` (`agency_id`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_admin
 -- ----------------------------
-INSERT INTO `tp_admin` VALUES ('1', 'admin', '', '', '9a28ce07ce875fbd14172a9ca5357d3c', '2dHDmj', '1262277023', null, '1561945094', '1561945094', '127.0.0.1', '127.0.0.1', '', '', '0', '0', null, '1', '1', '0', '0', '9127fc12-7b26-4298-a963-6433e51ee30e');
+INSERT INTO `tp_admin` VALUES ('1', 'admin', '', '', '9a28ce07ce875fbd14172a9ca5357d3c', '2dHDmj', '1262277023', null, '1562047021', '1562047021', '127.0.0.1', '127.0.0.1', '', '', '0', '0', null, '1', '1', '0', '0', '1b91aee0-42df-4082-b5b6-468831f97ce7');
 INSERT INTO `tp_admin` VALUES ('13', 'admin345', '', '', '3903607abe9a4246cd0ea06bdef44a1d', '0ZpstI', '1534991935', null, '1535019879', '1535019879', '127.0.0.1', '127.0.0.1', null, '', '0', '0', null, '10', '1', '0', '13', null);
 
 -- ----------------------------
@@ -64,7 +64,7 @@ CREATE TABLE `tp_admin_log` (
   `ip` varchar(25) NOT NULL,
   `addtime` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1501 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1515 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_admin_log
@@ -1569,6 +1569,20 @@ INSERT INTO `tp_admin_log` VALUES ('1497', '1', '修改用户【1】', '127.0.0.
 INSERT INTO `tp_admin_log` VALUES ('1498', '1', '修改用户【1】', '127.0.0.1', '1561965483');
 INSERT INTO `tp_admin_log` VALUES ('1499', '1', '修改模块【209】', '127.0.0.1', '1561965529');
 INSERT INTO `tp_admin_log` VALUES ('1500', '1', '修改用户【1】', '127.0.0.1', '1561975092');
+INSERT INTO `tp_admin_log` VALUES ('1501', '1', '添加文章【1】', '127.0.0.1', '1562047876');
+INSERT INTO `tp_admin_log` VALUES ('1502', '1', '删除文章【1】', '127.0.0.1', '1562048154');
+INSERT INTO `tp_admin_log` VALUES ('1503', '1', '为角色【1】编辑按钮权限', '127.0.0.1', '1562048177');
+INSERT INTO `tp_admin_log` VALUES ('1504', '1', '添加模块【443】', '127.0.0.1', '1562056010');
+INSERT INTO `tp_admin_log` VALUES ('1505', '1', '分配模块按钮【443】', '127.0.0.1', '1562056023');
+INSERT INTO `tp_admin_log` VALUES ('1506', '1', '为角色【1】分配模块权限', '127.0.0.1', '1562056036');
+INSERT INTO `tp_admin_log` VALUES ('1507', '1', '为角色【1】编辑按钮权限', '127.0.0.1', '1562056053');
+INSERT INTO `tp_admin_log` VALUES ('1508', '1', '添加管理员【31】', '127.0.0.1', '1562056502');
+INSERT INTO `tp_admin_log` VALUES ('1509', '1', '删除管理员【31】', '127.0.0.1', '1562056699');
+INSERT INTO `tp_admin_log` VALUES ('1510', '1', '修改模块【208】', '127.0.0.1', '1562056752');
+INSERT INTO `tp_admin_log` VALUES ('1511', '1', '修改模块【209】', '127.0.0.1', '1562056793');
+INSERT INTO `tp_admin_log` VALUES ('1512', '1', '删除模块【443】', '127.0.0.1', '1562056804');
+INSERT INTO `tp_admin_log` VALUES ('1513', '1', '添加文章【6】', '127.0.0.1', '1562058253');
+INSERT INTO `tp_admin_log` VALUES ('1514', '1', '修改文章【6】', '127.0.0.1', '1562058264');
 
 -- ----------------------------
 -- Table structure for tp_admin_login_log
@@ -1582,7 +1596,7 @@ CREATE TABLE `tp_admin_login_log` (
   `log_url` varchar(50) DEFAULT NULL COMMENT 'url',
   `log_time` int(10) DEFAULT NULL COMMENT '日志时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_admin_login_log
@@ -1620,6 +1634,7 @@ INSERT INTO `tp_admin_login_log` VALUES ('30', '1', '后台登录', '127.0.0.1',
 INSERT INTO `tp_admin_login_log` VALUES ('31', '1', '后台登录', '127.0.0.1', null, '1537404196');
 INSERT INTO `tp_admin_login_log` VALUES ('32', '1', '后台登录', '127.0.0.1', null, '1561692406');
 INSERT INTO `tp_admin_login_log` VALUES ('33', '1', '后台登录', '127.0.0.1', null, '1561945094');
+INSERT INTO `tp_admin_login_log` VALUES ('34', '1', '后台登录', '127.0.0.1', null, '1562047021');
 
 -- ----------------------------
 -- Table structure for tp_admin_role
@@ -1639,7 +1654,7 @@ CREATE TABLE `tp_admin_role` (
 -- ----------------------------
 -- Records of tp_admin_role
 -- ----------------------------
-INSERT INTO `tp_admin_role` VALUES ('1', '超级管理员', '系统角色', '最高权限', '248,249,250,199,200,201,202,203,204,205,206,207,208,209,442', 'a:7:{i:201;a:5:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"88\";i:4;s:2:\"89\";}i:202;a:5:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"92\";i:4;s:2:\"93\";}i:203;a:4:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"91\";}i:204;a:3:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";}i:206;a:1:{i:0;s:2:\"90\";}i:209;a:5:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"88\";i:4;s:2:\"89\";}i:442;a:3:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";}}', '0');
+INSERT INTO `tp_admin_role` VALUES ('1', '超级管理员', '系统角色', '最高权限', '248,249,250,199,200,201,202,203,204,205,206,207,208,209,442,443', 'a:8:{i:201;a:5:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"88\";i:4;s:2:\"89\";}i:202;a:5:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"92\";i:4;s:2:\"93\";}i:203;a:4:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"91\";}i:204;a:3:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";}i:206;a:1:{i:0;s:2:\"90\";}i:209;a:3:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";}i:442;a:3:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";}i:443;a:3:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";}}', '0');
 INSERT INTO `tp_admin_role` VALUES ('10', '测试员', null, '', '207,208,209,210,211,212,213,328,329,330,336,427,428,429,430', 'a:6:{i:209;a:5:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"88\";i:4;s:2:\"89\";}i:210;a:2:{i:0;s:2:\"85\";i:1;s:2:\"86\";}i:212;a:2:{i:0;s:2:\"85\";i:1;s:2:\"86\";}i:213;a:2:{i:0;s:2:\"85\";i:1;s:2:\"86\";}i:429;a:3:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";}i:430;a:5:{i:0;s:2:\"85\";i:1;s:2:\"86\";i:2;s:2:\"87\";i:3;s:2:\"96\";i:4;s:2:\"97\";}}', '1521789340');
 
 -- ----------------------------
@@ -1649,17 +1664,22 @@ DROP TABLE IF EXISTS `tp_art`;
 CREATE TABLE `tp_art` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(250) NOT NULL,
-  `content` longtext,
+  `message` longtext,
   `addtime` int(11) DEFAULT NULL,
   `member` varchar(255) DEFAULT NULL,
   `cont` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `title` (`title`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_art
 -- ----------------------------
+INSERT INTO `tp_art` VALUES ('2', '1', '1', '1111', '1111', '111');
+INSERT INTO `tp_art` VALUES ('3', '1', '1', '22222', '333333', '444444');
+INSERT INTO `tp_art` VALUES ('4', '22222', '44444', '555555555', '22222', '111111');
+INSERT INTO `tp_art` VALUES ('5', '', '啊啊啊啊啊啊啊啊啊啊啊啊啊', '1562057404', 'aa', 'admin345');
+INSERT INTO `tp_art` VALUES ('6', '', '1111111', '1562058264', '111', 'admin');
 
 -- ----------------------------
 -- Table structure for tp_button
@@ -1728,13 +1748,15 @@ CREATE TABLE `tp_config` (
   `cnzz` text,
   `forbid_ip` text,
   `addtime` int(11) NOT NULL,
+  `pagenum` int(11) DEFAULT '0',
+  `limitnum` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='系统配置';
 
 -- ----------------------------
 -- Records of tp_config
 -- ----------------------------
-INSERT INTO `tp_config` VALUES ('1', '商城', '商城', '商城', '123456789', '+86 13905515889', '+86 0551-62588298', '123456789@qq.com', '安徽合肥市科学大道118号5F创业园', '290089730', '66速聘', '皖 xxxxxxxx', '版权所有', '', '129.12.03.2#127.0.0.2#154.23.1.231', '1516353592');
+INSERT INTO `tp_config` VALUES ('1', '商城', '商城', '商城', '123456789', '+86 13905515889', '+86 0551-62588298', '123456789@qq.com', '安徽合肥市科学大道118号5F创业园', '290089730', '66速聘', '皖 xxxxxxxx', '版权所有', '', '129.12.03.2#127.0.0.2#154.23.1.231', '1516353592', '10', '3');
 
 -- ----------------------------
 -- Table structure for tp_device_login_log
@@ -1873,7 +1895,7 @@ CREATE TABLE `tp_module` (
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`),
   KEY `button` (`button`)
-) ENGINE=MyISAM AUTO_INCREMENT=443 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=444 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_module
@@ -1887,8 +1909,8 @@ INSERT INTO `tp_module` VALUES ('204', '操作按钮', '-199-200-204-', 'click',
 INSERT INTO `tp_module` VALUES ('205', '系统日志', '-199-205-', 'click', '199', '0', '', '', null);
 INSERT INTO `tp_module` VALUES ('206', '系统日志', '-199-205-206-', 'click', '205', '0', '90', '/system/logs', null);
 INSERT INTO `tp_module` VALUES ('207', '信息管理', '-0-207-', '1', '0', '0', '', '', 'fa-list-alt');
-INSERT INTO `tp_module` VALUES ('208', '文章管理', '-207-208-', '1', '207', '0', '', '', 'fa-newspaper-o');
-INSERT INTO `tp_module` VALUES ('209', '文章', '-207-208-209-', '1', '208', '0', '85,86,87,88,89', '/infor/art', '');
+INSERT INTO `tp_module` VALUES ('208', '信息管理', '-207-208-', '1', '207', '0', '', '', 'fa-newspaper-o');
+INSERT INTO `tp_module` VALUES ('209', '任务列表', '-207-208-209-', '1', '208', '0', '85,86,87,88,89', '/infor/art', '');
 INSERT INTO `tp_module` VALUES ('237', '系统备份', '-199-237-', 'click', '199', '0', '', '', null);
 INSERT INTO `tp_module` VALUES ('238', '数据备份', '-199-237-238-', 'click', '237', '0', '101,102', '/backup/backup_list', null);
 INSERT INTO `tp_module` VALUES ('239', '数据打包', '-199-237-239-', 'click', '237', '0', '87,103,104,105', '/backup/packs', null);

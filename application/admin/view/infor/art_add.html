@@ -25,7 +25,11 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">负责人：</label>
 								<div class="input-group col-sm-7">
-									<input type="text" class="form-control" maxlength="16"  name="cont" id="cont" value="{notempty name="$info"}{$info['cont']}{/notempty}" required="" aria-required="true" >
+									<select name="cont" id="cont">
+										{volist name="admin" id="vo"}
+										<option value="{$vo.admin_name}" {notempty name="$info"}{if condition="$info.cont eq $vo.admin_name"}selected{/if}{/notempty}>{$vo.admin_name}</option>
+										{/volist}
+									</select>
 								</div>
 							</div>
 

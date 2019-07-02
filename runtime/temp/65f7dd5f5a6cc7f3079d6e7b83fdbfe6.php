@@ -1,6 +1,6 @@
-<?php /*a:1:{s:94:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html";i:1562034280;}*/ ?>
+<?php /*a:1:{s:94:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html";i:1562060799;}*/ ?>
 <html>
-    <title>你的专属空间</title>
+    <title>任务发布</title>
     <style>
         body {
             height: 100%;width: 100%;
@@ -18,23 +18,27 @@
     </style>
     <body>
         <div style="text-align: center;">
-            <span style="font-size:32px;">留言板</span>
+            <span style="font-size:32px;">任务列表</span>
         </div>
         <?php if(is_array($info) || $info instanceof \think\Collection || $info instanceof \think\Paginator): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
         <div style="margin-top:10px;border:1px solid #ccc;">
             <div>
-                <span style="color: burlywood">留言人姓名：<?php echo htmlentities($vo['member']); ?></span>
+                <span style="color: burlywood">发布人姓名：<?php echo htmlentities($vo['member']); ?></span>
             </div>
             <div style="color: cornflowerblue">
-               内容：<?php echo htmlentities($vo['content']); ?>
+               内容：<?php echo htmlentities($vo['message']); ?>
             </div>
-            <div>留言时间：<?php echo htmlentities(date('Y-m-d H:i:s',!is_numeric($vo['addtime'])? strtotime($vo['addtime']) : $vo['addtime'])); ?></div>
+            <div>发布时间：<?php echo htmlentities(date('Y-m-d H:i:s',!is_numeric($vo['addtime'])? strtotime($vo['addtime']) : $vo['addtime'])); ?></div>
         </div>
         <?php endforeach; endif; else: echo "" ;endif; ?>
         <?php echo $info; ?>
         <div style="text-align: center;margin-top: 20px;">
             <div style="float: left;margin-top: 20px;">
-                负责人：<input type="text" id="cont" placeholder="请填写负责人"> 
+                负责人：<select name="cont" id="cont">
+                    <?php if(is_array($admin) || $admin instanceof \think\Collection || $admin instanceof \think\Paginator): $i = 0; $__LIST__ = $admin;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vi): $mod = ($i % 2 );++$i;?>
+                    <option value="<?php echo htmlentities($vi['admin_name']); ?>"><?php echo htmlentities($vi['admin_name']); ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </select>
             </div>
             
             <textarea name="message" id="message" style="overflow:hidden;resize: none;width: 100%;height: 60px;margin-bottom: 20px;"></textarea>
@@ -47,6 +51,7 @@
     <script>
         $('#btn').click(function(){
             var cont = $('#cont').val();
+            
             var message = $('#message').val();
             if(''== cont){
                 alert('负责人不能为空');
@@ -71,17 +76,5 @@
                 }
             })
         });
-
-       
-      
-
-
-        setInterval(function changes(){
-            var li = $('ul li').last();
-            li.onclick(function(){
-                alert(1);
-            })
-                
-        },1000);
     </script>
 </html>

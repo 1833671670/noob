@@ -1,4 +1,4 @@
-<?php /*a:1:{s:96:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\infor\art_add.html";i:1562048133;}*/ ?>
+<?php /*a:1:{s:96:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\infor\art_add.html";i:1562058226;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +26,11 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">负责人：</label>
 								<div class="input-group col-sm-7">
-									<input type="text" class="form-control" maxlength="16"  name="cont" id="cont" value="<?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['cont']); endif; ?>" required="" aria-required="true" >
+									<select name="cont" id="cont">
+										<?php if(is_array($admin) || $admin instanceof \think\Collection || $admin instanceof \think\Paginator): $i = 0; $__LIST__ = $admin;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+										<option value="<?php echo htmlentities($vo['admin_name']); ?>" <?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): if($info['cont'] == $vo['admin_name']): ?>selected<?php endif; endif; ?>><?php echo htmlentities($vo['admin_name']); ?></option>
+										<?php endforeach; endif; else: echo "" ;endif; ?>
+									</select>
 								</div>
 							</div>
 

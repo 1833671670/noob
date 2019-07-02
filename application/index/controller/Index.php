@@ -8,8 +8,13 @@ class Index extends Controller
 {
     public function index()
     {
+        $pagenum = Db::name('config')->where('id',1)->value('pagenum');
+        $limitnum = Db::name('config')->where('id',1)->value('limitnum');
+    
         if(Session::has('username')){
-            $info = Db::name('art')->paginate('1');
+            $admin = Db::name('admin')->order('admin_id asc')->select();
+            $this->assign('admin',$admin);
+            $info = Db::name('art')->order('addtime desc')->paginate($pagenum);
             $this->assign('info',$info);
             return $this->fetch();
         }else{
@@ -39,7 +44,7 @@ class Index extends Controller
     }
 
     public function message(){
-        $data['content'] = input('param.message');
+        $data['message'] = input('param.message');
         $data['member'] = Session::get('username');
         $data['cont'] = input('param.cont');
         $data['addtime'] = time();

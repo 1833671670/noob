@@ -43,8 +43,10 @@ class Infor extends Base{
     
     function art_add(){
         $id = intval(input('param.id'));
-      
+        $admin = Db::name('admin')->order('admin_id asc')->select();
+        $this->assign('admin',$admin);
         if($id>0){
+            
             $info = Db::name('art')->where('id',$id)->find();
             $this->assign("info",$info);
         }

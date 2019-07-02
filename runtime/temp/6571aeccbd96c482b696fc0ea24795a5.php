@@ -1,4 +1,4 @@
-<?php /*a:1:{s:95:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\system\admin.html";i:1552372252;}*/ ?>
+<?php /*a:1:{s:95:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\system\admin.html";i:1562056724;}*/ ?>
 
 <!DOCTYPE html>
 <html>
@@ -145,7 +145,7 @@ function edit(){
  */
 
 function del(){
-	var ids = getids();
+	var ids = getid();
 	if(ids != ''){
 		parent.layer.confirm('确认要删除吗？',{icon: 3, title:'警告'},function(index){
 			$.getJSON("<?php echo url('system/admin_del'); ?>",{'ids':ids},function(res){
@@ -170,7 +170,7 @@ function isno(){
 }
 
 function admin_examine(flag){
-	var ids = getids();
+	var ids = getid();
  	if(ids != ''){
  		parent.layer.confirm('确认要操作吗？',{icon: 3, title:'警告'},function(index){
  			$.ajax({

@@ -35,7 +35,7 @@
 								</div>
 							</div>
 							
-				             <input type="hidden" value="{$info['password']}" id="hid">           
+							<input type="hidden" id="hid" value="{notempty name="$info"}{$info['password']}{/notempty}" >     
 
 							<input type="hidden" name="id" value="{notempty name="$info"}{$info['id']}{/notempty}" />
 							

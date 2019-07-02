@@ -1,4 +1,4 @@
-<?php /*a:1:{s:99:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\infor\member_add.html";i:1561965435;}*/ ?>
+<?php /*a:1:{s:99:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\infor\member_add.html";i:1562057819;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +36,7 @@
 								</div>
 							</div>
 							
-				             <input type="hidden" value="<?php echo htmlentities($info['password']); ?>" id="hid">           
+							<input type="hidden" id="hid" value="<?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['password']); endif; ?>" >     
 
 							<input type="hidden" name="id" value="<?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['id']); endif; ?>" />
 							

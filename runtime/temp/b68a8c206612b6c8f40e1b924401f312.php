@@ -1,4 +1,4 @@
-<?php /*a:1:{s:94:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\config\site.html";i:1534937474;}*/ ?>
+<?php /*a:1:{s:94:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\config\site.html";i:1562058414;}*/ ?>
 <!DOCTYPE html>
 <html>
 <!-- Mirrored from www.zi-han.net/theme/hplus/tabs_panels.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:53 GMT -->
@@ -57,7 +57,19 @@
                                             <div class="input-group col-sm-4">                                              
                                                 <input type="text" class="form-control" name="title" id="title" value="<?php echo htmlentities($config['title']); ?>" >
                                             </div>
-                                        </div>      
+                                        </div> 
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">任务列表每页显示条数：</label>
+                                            <div class="input-group col-sm-4">                                              
+                                                <input type="text" class="form-control" name="pagenum" id="pagenum" value="<?php echo htmlentities($config['pagenum']); ?>" >
+                                            </div>
+                                        </div> 
+                                        <div class="form-group">
+                                                <label class="col-sm-2 control-label">最大展示任务数：</label>
+                                                <div class="input-group col-sm-4">                                              
+                                                    <input type="text" class="form-control" name="limitnum" id="limitnum" value="<?php echo htmlentities($config['limitnum']); ?>" >
+                                                </div>
+                                            </div>     
                                         <div class="hr-line-dashed"></div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">网站关键字：</label>
