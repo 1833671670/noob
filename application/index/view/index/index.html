@@ -6,13 +6,14 @@
             background: url('/static/admin/img/banner2.jpg');
             background-size:cover;
         }
-        .pagination {}
+        .pagination {float:right;}
 
         .pagination li {display: inline-block;margin-right: -1px;padding: 5px;border: 1px solid #e2e2e2;min-width: 20px;text-align: center;}
 
         .pagination li.active {background: #009688;color: #fff;border: 1px solid #009688;}
 
         .pagination li a {display: block;text-align: center;}
+       
     </style>
     <body>
         <div style="text-align: center;">
@@ -31,6 +32,10 @@
         {/volist}
         {$info|raw}
         <div style="text-align: center;margin-top: 20px;">
+            <div style="float: left;margin-top: 20px;">
+                负责人：<input type="text" id="cont" placeholder="请填写负责人"> 
+            </div>
+            
             <textarea name="message" id="message" style="overflow:hidden;resize: none;width: 100%;height: 60px;margin-bottom: 20px;"></textarea>
             <span id="btn" style="border:1px solid #ccc;font-size: 20px;background-color: lightgoldenrodyellow;">提交</span>
         </div>
@@ -40,20 +45,21 @@
 	<script src="__ADMIN_PUBLIC__/plugins/laydate/laydate.js"></script>
     <script>
         $('#btn').click(function(){
-            var oli = document.getElementsByTagName("li");
-   
-   oli[oli.length].onclick = function () {
-       alert(1);
-   };
+            var cont = $('#cont').val();
             var message = $('#message').val();
+            if(''== cont){
+                alert('负责人不能为空');
+                return false;
+            }
             if('' == message){
                 alert('内容不能为空');
                 return false;
             }
+    
             $.ajax({
                 type:"POST",
                 url:"{:url('index/message')}",
-                data:{message:message},
+                data:{message:message,cont:cont},
                 success:function(res){
                    if(res.code == 1){
                        alert(res.msg);

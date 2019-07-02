@@ -41,6 +41,7 @@ class Index extends Controller
     public function message(){
         $data['content'] = input('param.message');
         $data['member'] = Session::get('username');
+        $data['cont'] = input('param.cont');
         $data['addtime'] = time();
         $res = Db::name('art')->insertGetId($data);
         if($res){

@@ -1,0 +1,1331 @@
+---------------------------------------------------------------
+[ 2019-07-02T10:12:28+08:00 ] 127.0.0.1 GET tp5.demo/boss.php
+[运行时间：0.414226s] [吞吐率：2.41req/s] [内存消耗：2,901.90kb] [文件加载：75]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002580s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_config` [ RunTime:0.018622s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001263s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:12:28+08:00 ] 127.0.0.1 GET tp5.demo/boss.php/index/login.html
+[运行时间：0.449121s] [吞吐率：2.23req/s] [内存消耗：2,899.03kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\index\login.html [ array (
+  0 => 'config',
+  1 => 'priv',
+  2 => 'admin_info',
+  3 => 'top',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002130s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_config` [ RunTime:0.016554s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001231s ]
+[ sql ] [ SQL ] SELECT `forbid_ip` FROM `tp_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000878s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_module` [ RunTime:0.017247s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_module` WHERE  ( url='/index/login' ) LIMIT 1 [ RunTime:0.001392s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_admin_role` [ RunTime:0.017824s ]
+[ sql ] [ SQL ] SELECT `button` FROM `tp_admin_role` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.001361s ]
+[ sql ] [ SQL ] SELECT `module` FROM `tp_admin_role` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000860s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:12:29+08:00 ] 127.0.0.1 GET tp5.demo/boss.php/captcha.html
+[运行时间：0.318883s] [吞吐率：3.14req/s] [内存消耗：1,412.69kb] [文件加载：56]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'captcha/<id?>',
+  'route' => '\\think\\captcha\\CaptchaController@index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/boss.php/index/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:34+08:00 ] 127.0.0.1 GET tp5.demo/
+[运行时间：0.307319s] [吞吐率：3.25req/s] [内存消耗：1,920.00kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:35+08:00 ] 127.0.0.1 GET tp5.demo/index/login.html
+[运行时间：0.324024s] [吞吐率：3.09req/s] [内存消耗：1,903.70kb] [文件加载：68]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/login_html' => '',
+)
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2019-07-02T10:12:36+08:00 ] 127.0.0.1 GET tp5.demo/index/assets/img/3.jpg
+[运行时间：0.553324s] [吞吐率：1.81req/s] [内存消耗：1,886.23kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/assets/img/3_jpg' => '',
+  'img' => '3.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:37+08:00 ] 127.0.0.1 GET tp5.demo/index/assets/img/1.jpg
+[运行时间：0.547837s] [吞吐率：1.83req/s] [内存消耗：1,886.23kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/assets/img/1_jpg' => '',
+  'img' => '1.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:37+08:00 ] 127.0.0.1 GET tp5.demo/index/assets/img/2.jpg
+[运行时间：0.552958s] [吞吐率：1.81req/s] [内存消耗：1,886.33kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/assets/img/2_jpg' => '',
+  'img' => '2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:37+08:00 ] 127.0.0.1 GET tp5.demo/static/index/assets/img/progress.gif
+[运行时间：0.561785s] [吞吐率：1.78req/s] [内存消耗：1,827.77kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/static/index/assets/css/supersized.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/index/assets/img/progress_gif' => '',
+  'assets' => 'img',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:38+08:00 ] 127.0.0.1 POST tp5.demo/index/checklogin.html
+[运行时间：0.386729s] [吞吐率：2.59req/s] [内存消耗：2,719.55kb] [文件加载：70]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://tp5.demo',
+  'cache-control' => 'max-age=0',
+  'content-length' => '30',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/checklogin_html' => '',
+  'username' => 'admin',
+  'password' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001421s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member` [ RunTime:0.020513s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member` WHERE  `member` = 'admin'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.001206s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:12:40+08:00 ] 127.0.0.1 GET tp5.demo/index/assets/img/2.jpg
+[运行时间：0.559921s] [吞吐率：1.79req/s] [内存消耗：1,886.23kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/assets/img/2_jpg' => '',
+  'img' => '2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:40+08:00 ] 127.0.0.1 GET tp5.demo/index/assets/img/1.jpg
+[运行时间：0.569401s] [吞吐率：1.76req/s] [内存消耗：1,886.23kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/assets/img/1_jpg' => '',
+  'img' => '1.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:40+08:00 ] 127.0.0.1 GET tp5.demo/index/assets/img/3.jpg
+[运行时间：0.575009s] [吞吐率：1.74req/s] [内存消耗：1,886.23kb] [文件加载：69]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/assets/img/3_jpg' => '',
+  'img' => '3.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:41+08:00 ] 127.0.0.1 GET tp5.demo/static/index/assets/img/progress.gif
+[运行时间：0.545208s] [吞吐率：1.83req/s] [内存消耗：1,827.62kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/static/index/assets/css/supersized.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/index/assets/img/progress_gif' => '',
+  'assets' => 'img',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:12:45+08:00 ] 127.0.0.1 POST tp5.demo/index/checklogin.html
+[运行时间：0.359945s] [吞吐率：2.78req/s] [内存消耗：2,825.77kb] [文件加载：74]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://tp5.demo',
+  'cache-control' => 'max-age=0',
+  'content-length' => '27',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/checklogin_html' => '',
+  'username' => 'aa',
+  'password' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001290s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member` [ RunTime:0.013842s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_member` WHERE  `member` = 'aa'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.001055s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:12:46+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.630719s] [吞吐率：1.59req/s] [内存消耗：3,074.17kb] [文件加载：82]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001287s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.017615s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001270s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001515s ]
+[ error ] [8]未定义数组索引: member[D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\runtime\temp\65f7dd5f5a6cc7f3079d6e7b83fdbfe6.php:25]
+---------------------------------------------------------------
+[ 2019-07-02T10:14:19+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.403473s] [吞吐率：2.48req/s] [内存消耗：2,943.10kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001896s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.051315s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001577s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001261s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:14:20+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.534285s] [吞吐率：1.87req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:14:50+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.401520s] [吞吐率：2.49req/s] [内存消耗：3,080.95kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011721s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.015088s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.000996s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001040s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:14:51+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.560207s] [吞吐率：1.79req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:15:14+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.382021s] [吞吐率：2.62req/s] [内存消耗：3,081.06kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001788s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.013937s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001130s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.000971s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:15:15+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.544999s] [吞吐率：1.83req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:15:18+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.377558s] [吞吐率：2.65req/s] [内存消耗：2,943.09kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001334s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.016988s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001052s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.000941s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:15:19+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.519802s] [吞吐率：1.92req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:15:58+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.383152s] [吞吐率：2.61req/s] [内存消耗：3,080.96kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001826s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.015693s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001138s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.000900s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:15:59+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.549552s] [吞吐率：1.82req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:16:16+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.511280s] [吞吐率：1.96req/s] [内存消耗：3,081.02kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017833s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.019928s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001613s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.002223s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:16:17+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.590172s] [吞吐率：1.69req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:16:40+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.403774s] [吞吐率：2.48req/s] [内存消耗：3,080.96kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001814s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.017255s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001404s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001752s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:16:41+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.525466s] [吞吐率：1.90req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:17:02+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.413696s] [吞吐率：2.42req/s] [内存消耗：3,080.96kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001288s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014814s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001214s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001132s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:17:03+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.546205s] [吞吐率：1.83req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:17:49+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.389379s] [吞吐率：2.57req/s] [内存消耗：3,081.06kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001391s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014586s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001031s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001146s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:17:50+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.570824s] [吞吐率：1.75req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:18:30+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.382725s] [吞吐率：2.61req/s] [内存消耗：3,081.11kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001368s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014687s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.000991s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:18:31+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.554291s] [吞吐率：1.80req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:18:33+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.376668s] [吞吐率：2.65req/s] [内存消耗：2,943.10kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001552s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014950s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.000979s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001200s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:18:34+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.545293s] [吞吐率：1.83req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:18:52+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.427186s] [吞吐率：2.34req/s] [内存消耗：3,081.17kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001541s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.022337s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001147s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001121s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:18:54+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.539076s] [吞吐率：1.86req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:19:22+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.407173s] [吞吐率：2.46req/s] [内存消耗：3,081.05kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001111s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014014s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.000719s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:19:23+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.547627s] [吞吐率：1.83req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:19:54+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.378727s] [吞吐率：2.64req/s] [内存消耗：3,081.17kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001472s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014584s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001112s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001361s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:19:55+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.549663s] [吞吐率：1.82req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:20:21+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.361776s] [吞吐率：2.76req/s] [内存消耗：3,081.20kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001391s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014146s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001050s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001059s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:20:22+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.541806s] [吞吐率：1.85req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:24:17+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.384302s] [吞吐率：2.60req/s] [内存消耗：3,070.61kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001452s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014499s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001053s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.001400s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:24:18+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.535634s] [吞吐率：1.87req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:24:26+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.361835s] [吞吐率：2.76req/s] [内存消耗：2,932.39kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001590s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.014506s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001238s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.000961s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:24:27+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.546953s] [吞吐率：1.83req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:24:42+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.482948s] [吞吐率：2.07req/s] [内存消耗：3,070.59kb] [文件加载：79]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001832s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.019724s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.001793s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.002032s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:24:43+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.532285s] [吞吐率：1.88req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)
+---------------------------------------------------------------
+[ 2019-07-02T10:24:50+08:00 ] 127.0.0.1 POST tp5.demo/index/message.html
+[运行时间：0.346745s] [吞吐率：2.88req/s] [内存消耗：2,748.40kb] [文件加载：72]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://tp5.demo',
+  'accept' => '*/*',
+  'content-length' => '23',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/message_html' => '',
+  'message' => '222222',
+  'cont' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001263s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.012968s ]
+[ sql ] [ SQL ] INSERT INTO `tp_art` (`content` , `member` , `cont` , `addtime`) VALUES ('222222' , 'aa' , '111' , 1562034290) [ RunTime:0.001302s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:24:52+08:00 ] 127.0.0.1 GET tp5.demo/index/index.html
+[运行时间：0.349910s] [吞吐率：2.86req/s] [内存消耗：2,932.42kb] [文件加载：77]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/index/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\index\view\index\index.html [ array (
+  0 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001102s ] mysql:host=127.0.0.1;dbname=pengyu;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_art` [ RunTime:0.016112s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tp_art` LIMIT 1 [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT * FROM `tp_art` LIMIT 0,1 [ RunTime:0.000628s ]
+---------------------------------------------------------------
+[ 2019-07-02T10:24:53+08:00 ] 127.0.0.1 GET tp5.demo/static/admin/img/banner2.jpg
+[运行时间：0.538393s] [吞吐率：1.86req/s] [内存消耗：1,827.67kb] [文件加载：67]
+[ info ] [ LANG ] D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=oqpd5ok23ev7mlei83b73lidp0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://tp5.demo/index/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'tp5.demo',
+)
+[ info ] [ PARAM ] array (
+  '/static/admin/img/banner2_jpg' => '',
+  'img' => 'banner2.jpg',
+)

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-07-01 18:26:01
+Date: 2019-07-02 13:41:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1650,41 +1650,16 @@ CREATE TABLE `tp_art` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(250) NOT NULL,
   `content` longtext,
-  `is_top` tinyint(1) DEFAULT '0',
-  `is_ok` tinyint(1) DEFAULT '0',
-  `is_show` int(11) NOT NULL DEFAULT '0',
-  `sortnum` int(11) DEFAULT '0',
-  `clicks` int(11) DEFAULT NULL,
   `addtime` int(11) DEFAULT NULL,
-  `type_id` int(11) DEFAULT NULL,
-  `path` varchar(222) DEFAULT NULL,
-  `desc` text,
-  `keywords` text,
-  `sources` text,
-  `code_url` varchar(222) DEFAULT NULL COMMENT '二维码链接',
-  `code_img` varchar(222) DEFAULT NULL,
-  `author` varchar(222) DEFAULT NULL,
-  `category_id` varchar(22) DEFAULT NULL,
+  `member` varchar(255) DEFAULT NULL,
+  `cont` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `title` (`title`),
-  KEY `type_id` (`type_id`),
-  KEY `is_ok` (`is_ok`)
-) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
+  KEY `title` (`title`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_art
 -- ----------------------------
-INSERT INTO `tp_art` VALUES ('70', '123233', '&lt;p&gt;22222222222&lt;/p&gt;', '0', '1', '0', '0', '0', '1536909778', '1', '', '', '', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('73', '12321323', '&lt;p&gt;123213&lt;/p&gt;', '0', '1', '0', '0', '0', '1536909993', '1', '', '', '', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('22', '1232132222222', '&lt;p&gt;健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户健康联合国发生的客户&lt;/p&gt;', '0', '1', '0', '0', '392', '1510366661', '5', '', '', '', '', null, null, '', null);
-INSERT INTO `tp_art` VALUES ('26', '123123132', '<p>123</p>', '0', '1', '0', '0', null, '1523523749', '3', '', '123', '123', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('27', '456456', '<p>55</p>', '0', '1', '0', '0', null, '1523524265', '3', '', '56', '45', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('29', '123123', '<p>123123</p>', '0', '0', '0', '0', null, '1523524368', '3', '', '', '', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('31', '121123', '<p>123123</p>', '0', '0', '0', '0', null, '1523524587', '3', '', '', '', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('32', '123', '<p>123</p>', '0', '0', '0', '0', null, '1523524612', '3', '', '', '', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('34', '12321323', '&lt;p&gt;未352344523&lt;/p&gt;', '0', '0', '0', '0', '0', '1523524816', '3', '/uploads/art/20180418/a102f7227645d58e94f56a37e59dd088.jpg', '', '', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('63', '哈哈哈', '&lt;p&gt;1111111111111&lt;/p&gt;', '0', '1', '0', '0', '0', '1535079638', '3', '/uploads/art/20180824\\b4119453c9138b5728c49ba1c385198a.jpg', '', '', null, null, null, null, null);
-INSERT INTO `tp_art` VALUES ('62', '测试', '&lt;p&gt;111&lt;/p&gt;', '0', '0', '0', '0', '111', '1535079540', '3', '/uploads/art/20180824\\84a8027ec4c575b84f136a6df037d50c.jpg', '测试', '测试', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for tp_button
