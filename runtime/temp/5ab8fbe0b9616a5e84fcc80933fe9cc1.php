@@ -1,4 +1,4 @@
-<?php /*a:1:{s:92:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\infor\art.html";i:1561712919;}*/ ?>
+<?php /*a:1:{s:92:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\infor\art.html";i:1562048039;}*/ ?>
 
 <!DOCTYPE html>
 <html>
@@ -66,10 +66,10 @@
                                 <input type="checkbox" class="i-checks top_check" name="top_check">
 							</th>
 							<th>ID</th>
-							<th>编号</th>
-							<th>标题</th>
+							<th>发布人</th>
+							<th>内容</th>
 						
-							<th>状态</th>
+						
 							<th>负责人</th>
 							
 							<th>添加时间</th>
@@ -81,17 +81,11 @@
 	                                 <input type="checkbox" class="i-checks" name="check" value="<?php echo htmlentities($vo['id']); ?>">
 								 </td>
 								 <td><?php echo htmlentities($vo['id']); ?></td>
-								 <td></td>
-                                 <td><?php echo htmlentities($vo['title']); ?></td>
+								 <td><?php echo htmlentities($vo['member']); ?></td>
+                                 <td><?php echo htmlentities(mb_substr($vo['message'],0,20)); ?></td>
                                
-                                 <td>
-	                                <?php if($vo['is_ok'] == 0): ?>
-	                                <span class="label">关闭</span>
-	                                <?php else: ?>
-			                        <span class="label label-primary">开启</span>
-			                        <?php endif; ?>
-								 </td>
-								 <td></td>
+                                 
+								 <td><?php echo htmlentities($vo['cont']); ?></td>
                                 
                                  <td><?php echo htmlentities(date("Y-m-d H:i:s",!is_numeric($vo['addtime'])? strtotime($vo['addtime']) : $vo['addtime'])); ?></td>
                              </tr>

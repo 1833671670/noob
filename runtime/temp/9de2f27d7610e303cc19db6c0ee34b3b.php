@@ -1,4 +1,4 @@
-<?php /*a:1:{s:96:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\infor\art_add.html";i:1561945570;}*/ ?>
+<?php /*a:1:{s:96:"D:\phpstudy\PHPTutorial\WWW\noob\sjx20190429\tp5.1demo\application\admin\view\infor\art_add.html";i:1562048133;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,43 +24,23 @@
 						<form class="form-horizontal m-t" id="commentForm" method="post"
 							action="<?php echo url('infor/art_ok'); ?>">
 							<div class="form-group">
-								<label class="col-sm-3 control-label">标题：</label>
+								<label class="col-sm-3 control-label">负责人：</label>
 								<div class="input-group col-sm-7">
-									<input type="text" class="form-control" maxlength="16"  name="title" id="title" value="<?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['title']); endif; ?>" required="" aria-required="true" >
+									<input type="text" class="form-control" maxlength="16"  name="cont" id="cont" value="<?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['cont']); endif; ?>" required="" aria-required="true" >
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label">发布人：</label>
+								<div class="input-group col-sm-7">
+									<input type="text" class="form-control" maxlength="16"  name="member" id="member" value="<?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['member']); endif; ?>" required="" aria-required="true" >
 								</div>
 							</div>
 							
-							
-							<div class="form-group">
-                                <label class="col-sm-3 control-label">关键字：</label>
-                                <div class="input-group col-sm-7">
-                                    <textarea class="form-control" type="text" rows="3"  name="keywords"><?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['keywords']); endif; ?></textarea>
-                                </div>
-                            </div>                           
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">描述：</label>
-                                <div class="input-group col-sm-7">
-                                    <textarea class="form-control" type="text" rows="3" name="desc" ><?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['desc']); endif; ?></textarea>
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                 <label class="col-sm-3 control-label">文章主图：</label>
-                                 <div class="input-group col-sm-7">    
-                                 	<div class="img_div">           
-                                 		<img id="img_data" class="oneimg" <?php if(!(empty($info['path']) || (($info['path'] instanceof \think\Collection || $info['path'] instanceof \think\Paginator ) && $info['path']->isEmpty()))): ?>src="<?php echo htmlentities($info['path']); ?>"<?php else: ?>src="/static/admin/img/default.jpg"<?php endif; ?> />                          
-                                    	<span class="delbtn">x</span>
-                                    </div>
-                                    <button type="button" class="layui-btn" id="uploadbtn">
-	  									<i class="layui-icon">&#xe67c;</i>上传图片
-						 			</button>
-						 			<input type="hidden" name="path" id="img_path" <?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?>value="<?php echo htmlentities($info['path']); ?>"<?php endif; ?> />
-                                 </div>
-                             </div>
-                            
                              <div class="form-group">
                                  <label class="col-sm-3 control-label">文章内容：</label>
                                  <div class="input-group col-sm-7">                                              
-                                      <script id="editor" name="content" style="height:500px;" type="text/plain" ><?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlspecialchars_decode($info['content']); endif; ?></script>
+									<textarea name="message" id="message" style="overflow:hidden;resize: none;width: 100%;height: 60px;margin-bottom: 20px;"><?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?><?php echo htmlentities($info['message']); endif; ?></textarea>
                                  </div>
                              </div>
 							
@@ -98,16 +78,7 @@
 	<script type="text/javascript">
 	$(function(){
 		
-		var path = "<?php if(isset($info)): ?><?php echo htmlentities($info['path']); endif; ?>";
-		if(path){
-			$("#uploadbtn").hide();
-    	    $(".delbtn").show();
-		}
-		
-		var ue = UE.getEditor('editor');
-		ue.ready(function() {
-		});
-		
+	
 		$(".i-checks").iCheck({
 			checkboxClass:"icheckbox_square-green",
 			radioClass:"iradio_square-green",
@@ -120,15 +91,15 @@
         });
         
         function checkForm(){
-            if( '' == $.trim($('#title').val())){
-                warn('请输入名称')
+            if( '' == $.trim($('#cont').val())){
+                warn('请输入负责人')
                 return false;
             }
-            if( '' == $.trim($('#type_id').val())){
-                warn('请选择类别')
+            if( '' == $.trim($('#member').val())){
+                warn('请填写发布人')
                 return false;
             }
-            if( '' == ue.getContent()){
+            if( '' == $.trim($('#message').val())){
                 warn('请输入内容')
                 return false;
             }
@@ -144,56 +115,7 @@
             }
         }
     });
-	
-	
 
-	layui.use('upload', function(){
-		  var upload = layui.upload;
-		   
-		  //执行实例
-		  var uploadInst = upload.render({
-		    elem: '#uploadbtn' //绑定元素
-		    ,url: '<?php echo url("upload/uploadimg"); ?>' //上传接口
-		    ,data:{'type':'art'}
-		    ,accept:'images'
-		    ,done: function(res, index, upload){
-		      //上传完毕回调
-		      if(res.code == 1){
-		    	   $("#uploadbtn").hide();
-		    	  
-		    	   $("#img_data").attr('src',res.data);
-		    	   $(".delbtn").show();
-		    	   
-		    	   $("#img_path").val(res.data);
-		      } else {
-		    	  warn(res.msg,'error');
-		      }
-		    }
-		    ,error: function(index, upload){
-		      //请求异常回调
-		      warn('上传失败');
-		    }
-		  });
-		});	
-	
-	
-	$(".delbtn").click(function(){
-		var path = $(this).prev().attr('src');
-		var obj = this;
-		$.ajax({
-			type: "POST",
-			url: '<?php echo url("upload/delimg"); ?>',
-			data: {path:path,type:'art'},
-			async: false,
-			success: function(res) {
-				$(obj).prev().attr('src','/static/admin/img/default.jpg');
-				$("#uploadbtn").show();
-				$(obj).hide();
-				$("#img_path").val('');
-			}
-		})
-		
-	})
 	</script>
 </body>
 </html>

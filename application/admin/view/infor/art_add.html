@@ -23,43 +23,23 @@
 						<form class="form-horizontal m-t" id="commentForm" method="post"
 							action="{:url('infor/art_ok')}">
 							<div class="form-group">
-								<label class="col-sm-3 control-label">标题：</label>
+								<label class="col-sm-3 control-label">负责人：</label>
 								<div class="input-group col-sm-7">
-									<input type="text" class="form-control" maxlength="16"  name="title" id="title" value="{notempty name="$info"}{$info['title']}{/notempty}" required="" aria-required="true" >
+									<input type="text" class="form-control" maxlength="16"  name="cont" id="cont" value="{notempty name="$info"}{$info['cont']}{/notempty}" required="" aria-required="true" >
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label">发布人：</label>
+								<div class="input-group col-sm-7">
+									<input type="text" class="form-control" maxlength="16"  name="member" id="member" value="{notempty name="$info"}{$info['member']}{/notempty}" required="" aria-required="true" >
 								</div>
 							</div>
 							
-							
-							<div class="form-group">
-                                <label class="col-sm-3 control-label">关键字：</label>
-                                <div class="input-group col-sm-7">
-                                    <textarea class="form-control" type="text" rows="3"  name="keywords">{notempty name="$info"}{$info['keywords']}{/notempty}</textarea>
-                                </div>
-                            </div>                           
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">描述：</label>
-                                <div class="input-group col-sm-7">
-                                    <textarea class="form-control" type="text" rows="3" name="desc" >{notempty name="$info"}{$info['desc']}{/notempty}</textarea>
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                 <label class="col-sm-3 control-label">文章主图：</label>
-                                 <div class="input-group col-sm-7">    
-                                 	<div class="img_div">           
-                                 		<img id="img_data" class="oneimg" {notempty name="$info['path']"}src="{$info['path']}"{else/}src="__ADMIN_PUBLIC__/img/default.jpg"{/notempty} />                          
-                                    	<span class="delbtn">x</span>
-                                    </div>
-                                    <button type="button" class="layui-btn" id="uploadbtn">
-	  									<i class="layui-icon">&#xe67c;</i>上传图片
-						 			</button>
-						 			<input type="hidden" name="path" id="img_path" {notempty name='$info'}value="{$info['path']}"{/notempty} />
-                                 </div>
-                             </div>
-                            
                              <div class="form-group">
                                  <label class="col-sm-3 control-label">文章内容：</label>
                                  <div class="input-group col-sm-7">                                              
-                                      <script id="editor" name="content" style="height:500px;" type="text/plain" >{notempty name="$info"}{:htmlspecialchars_decode($info['content'])}{/notempty}</script>
+									<textarea name="message" id="message" style="overflow:hidden;resize: none;width: 100%;height: 60px;margin-bottom: 20px;">{notempty name="$info"}{$info['message']}{/notempty}</textarea>
                                  </div>
                              </div>
 							
@@ -97,16 +77,7 @@
 	<script type="text/javascript">
 	$(function(){
 		
-		var path = "{present name='$info'}{$info['path']}{/present}";
-		if(path){
-			$("#uploadbtn").hide();
-    	    $(".delbtn").show();
-		}
-		
-		var ue = UE.getEditor('editor');
-		ue.ready(function() {
-		});
-		
+	
 		$(".i-checks").iCheck({
 			checkboxClass:"icheckbox_square-green",
 			radioClass:"iradio_square-green",
@@ -119,15 +90,15 @@
         });
         
         function checkForm(){
-            if( '' == $.trim($('#title').val())){
-                warn('请输入名称')
+            if( '' == $.trim($('#cont').val())){
+                warn('请输入负责人')
                 return false;
             }
-            if( '' == $.trim($('#type_id').val())){
-                warn('请选择类别')
+            if( '' == $.trim($('#member').val())){
+                warn('请填写发布人')
                 return false;
             }
-            if( '' == ue.getContent()){
+            if( '' == $.trim($('#message').val())){
                 warn('请输入内容')
                 return false;
             }
@@ -143,56 +114,7 @@
             }
         }
     });
-	
-	
 
-	layui.use('upload', function(){
-		  var upload = layui.upload;
-		   
-		  //执行实例
-		  var uploadInst = upload.render({
-		    elem: '#uploadbtn' //绑定元素
-		    ,url: '{:url("upload/uploadimg")}' //上传接口
-		    ,data:{'type':'art'}
-		    ,accept:'images'
-		    ,done: function(res, index, upload){
-		      //上传完毕回调
-		      if(res.code == 1){
-		    	   $("#uploadbtn").hide();
-		    	  
-		    	   $("#img_data").attr('src',res.data);
-		    	   $(".delbtn").show();
-		    	   
-		    	   $("#img_path").val(res.data);
-		      } else {
-		    	  warn(res.msg,'error');
-		      }
-		    }
-		    ,error: function(index, upload){
-		      //请求异常回调
-		      warn('上传失败');
-		    }
-		  });
-		});	
-	
-	
-	$(".delbtn").click(function(){
-		var path = $(this).prev().attr('src');
-		var obj = this;
-		$.ajax({
-			type: "POST",
-			url: '{:url("upload/delimg")}',
-			data: {path:path,type:'art'},
-			async: false,
-			success: function(res) {
-				$(obj).prev().attr('src','__ADMIN_PUBLIC__/img/default.jpg');
-				$("#uploadbtn").show();
-				$(obj).hide();
-				$("#img_path").val('');
-			}
-		})
-		
-	})
 	</script>
 </body>
 </html>

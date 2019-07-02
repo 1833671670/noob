@@ -38,8 +38,6 @@ class Infor extends Base{
         //展示该模块的方法
         $this->assign('info',$info);
         
-       
-    
         return $this->fetch();
     }
     
@@ -47,7 +45,7 @@ class Infor extends Base{
         $id = intval(input('param.id'));
       
         if($id>0){
-            $info = $art::get($id);
+            $info = Db::name('art')->where('id',$id)->find();
             $this->assign("info",$info);
         }
 
@@ -57,23 +55,17 @@ class Infor extends Base{
     function art_ok(){
         if(request()->isAjax()){
             $id = intval(input('post.id'));
-            $is_ok = intval($this->request->param('is_ok'));
-            $clicks = intval($this->request->param('clicks'));
+           
             $param = input('post.');
-            $param['content'] = input('post.content','','htmlspecialchars');
-            $param['clicks'] = $clicks;
-            unset($param['file']);
-            p($param);exit;
+            
+            $param['addtime'] = time();
+            
             if($id>0) { //修改
-                //若新上传图片，则删除以前图片
-                $pre_path = Db::name('art')->where('id',$id)->value('path');
-                if($param['path'] != $pre_path){
-                    @unlink('.'.$pre_path);
-                }
+                
                 $result = Db::name('art')->where('id',$id)->update($param);
                 $log = "修改文章【".$id."】";
             }else {
-                $param['addtime'] = time();
+                
                 unset($param['id']);
                 $result = Db::name('art')->insertGetId($param);
                 $log = "添加文章【".$result."】";
@@ -93,13 +85,7 @@ class Infor extends Base{
         if(request()->isAjax()){
             $ids = input('get.ids');
             $conditions = "id in ($ids)";
-            $arr = Db::name('art')->field('content,path')->where($conditions)->select();
-            foreach($arr as $val) {
-                //删除文件夹下面的图片
-                del_content_img($val['content']);
-                //删除该文章的主图
-                @unlink('.'.$val['path']);
-            }
+           
             $result = Db::name('art')->where($conditions)->delete();
             if($result !== false){
                 $this->SaveAdminLog("删除文章【".$ids."】");
